@@ -2,8 +2,8 @@
  * -- SASS Setup
  * ---------------------------------------------------------------------- */
 
-$heading-font: 'Century Schoolbook', Georgia, serif;
-$body-font:    'Ubuntu', 'Segoe UI', 'Lucida Grande', sans-serif;
+$heading-font: Century Schoolbook, Georgia, serif;
+$body-font:    Ubuntu, Segoe UI, Lucida Grande, sans-serif;
 
 $font-color: #444;
 $heading-color: #555;
@@ -49,7 +49,7 @@ h2 {
 h3 {
 	@include heading;
 	color: #00661A;
-	font-suze: 1.1em;
+	font-size: 1.1em;
 	margin-bottom: 10px;
 	padding: 0 0 5px 0;
 }
@@ -231,6 +231,7 @@ input[type="submit"] {
 }
 
 .button:hover {
+	background: #efefef;
 	background: -moz-linear-gradient(top, rgb(221, 221, 221) 0%, rgb(187, 187, 187) 100%); 
 	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(221, 221, 221)), to(rgb(187, 187, 187)));
 
