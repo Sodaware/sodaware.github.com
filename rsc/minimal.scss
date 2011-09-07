@@ -2,8 +2,8 @@
  * -- SASS Setup
  * ---------------------------------------------------------------------- */
 
-$heading-font: Century Schoolbook, Georgia, serif;
-$body-font:    Ubuntu, Segoe UI, Lucida Grande, sans-serif;
+$heading-font: "Century Schoolbook", Georgia, serif;
+$body-font:    Ubuntu, "Segoe UI", "Bitstream Vera Sans", sans-serif;
 
 $font-color: #444;
 $heading-color: #555;
@@ -37,7 +37,9 @@ $sidebar-width: 220px;
 
 p, li, dt, dd, td, th {
 	color: $font-color;
-	font: 12pt normal $body-font;
+	font-size: 12pt;
+	font-weight: normal;
+	font-family: $body-font;
 	line-height: 1.4em;
 }
 
@@ -71,6 +73,13 @@ th[scope="row"] {
 	background: #eee;
 }
 
+acronym {
+	border-bottom: 1px dotted #444;
+}
+
+p.to_content { display: none; }
+p.to_top	 { display: block; text-align: right; width: $content-width; padding-left: 20px; font-size: 0.9em; }
+
 
 /* ----------------------------------------------------------------------
  * -- Page Layout
@@ -80,11 +89,11 @@ th[scope="row"] {
 	width: $content-width;
 	float: left;
 	margin-left: 20px;
-	padding-top: 20px;
+	padding: 20px 0;
 }
 
 
-#sidebar-container {
+#left-sidebar {
 	width: $sidebar-width;
 	float: left;
 	padding-top: 20px;
@@ -148,12 +157,24 @@ img.shadow {
 	box-shadow: 2px 2px 2px #ddd;
 }
 
+#content-container dd { 
+	margin-bottom: 16px;
+}
+
+#content-container > section {
+	margin-bottom: 48px;
+}
+
+#content-container em {
+	background: #F2FFCC;
+}
+
 
 /* ----------------------------------------------------------------------
  * -- Sidebar Styles
  * ---------------------------------------------------------------------- */
 
-#sidebar-container h2 {
+#left-sidebar h2 {
 	
 	@include underline;
 	@include heading;
@@ -163,27 +184,44 @@ img.shadow {
 
 }
 
-#sidebar-container ul {
+#left-sidebar ul {
 	margin: 0;
 	padding: 0;
 	list-style: none;
 }
 
-#sidebar-container ul li {
+#left-sidebar ul li {
 	margin: 4px 0;
 	padding: 4px;
 }
 
-#sidebar-container ul li.selected { 
+#left-sidebar ul li.selected { 
 	background: #ddd;
 }
 
-.sidebar_box { 
+#left-sidebar section { 
 	background: #eee;
 	padding: 10px;
 	margin-bottom: 20px;
 	overflow: hidden;
 }
+
+
+/* Currently selected menu item */
+.page-hagfish li.hagfish,  			
+.page-phing_extra li.phing_extra, 
+.page-sodaware_mod li.sodaware_mod, 
+.page-pangolin li.pangolin, 
+.page-blam li.blam, 
+.page-blitzunit li.blitzunit, 
+.page-php_todolist li.php_todolist, 
+.page-blitz_libs li.blitz_libs,
+.page-monster_mash li.monster_mash,
+.page-psycho_bean li.psycho_bean
+{
+	background: #ddd;
+}
+
 
 
 /* ----------------------------------------------------------------------
@@ -228,10 +266,11 @@ input[type="submit"] {
 	-moz-box-shadow: #eee 0px 0px 2px 1px;
 	-webkit-box-shadow: #eee 0px 0px 2px 1px;
 	font-size: 0.9em;
+	font-family: $body-font;
 }
 
 .button:hover {
-	background: #efefef;
+	background: #ccc;
 	background: -moz-linear-gradient(top, rgb(221, 221, 221) 0%, rgb(187, 187, 187) 100%); 
 	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(221, 221, 221)), to(rgb(187, 187, 187)));
 
@@ -240,59 +279,83 @@ input[type="submit"] {
 	color: #111;
 }
 
-.search_box {
-	border: 1px solid #bbb;
-	width: 190px;
-	padding: 4px;
-	background: #fafafa;
-	background: -moz-linear-gradient(top, #f0f0f0 0%, #fafafa 100%); 
-	background: -webkit-gradient(linear, 0% 0%, 0% 50%, from(#f0f0f0), to(#fafafa));
-}
-
-textarea.comment_box { width: 100%; border: 1px solid #aaa;}
-
-
-/* ----------------------------------------------------------------------
- * -- Comments
- * ---------------------------------------------------------------------- */
-
-.comment {
-	margin-bottom: 32px;
-}
-
-.comment_meta {
-	padding: 8px !important; background: #eee;
-}
-
-.highlight .comment_meta {
-	background: #CCFFCC;
+.button.download > span {
+	background: url('icons.png') center left no-repeat;
+	padding-left: 22px;
 }
 
 
 /* ----------------------------------------------------------------------
- * -- Archives
+ * -- Asides
  * ---------------------------------------------------------------------- */
 
-#smart-archives-block {
-	list-style: none;
-	margin: 0 auto 16px;
-	padding: 0;
+article > aside {
+	@include overline;
+	@include underline;
+
 	font-size: 0.9em;
+	font-family: $heading-font;
+	background: #EEE;
+	position: relative;
+	padding: 10px;
+
 }
 
-#smart-archives-block li {
-	padding: 4px;
-	margin: 2px 0;
+article > aside p {
+	margin: 8px 0 !important;
+	font-style: italic;
 }
 
-#smart-archives-block a { 
+
+/* ----------------------------------------------------------------------
+ * -- Repository information
+ * ---------------------------------------------------------------------- */
+
+article > section.summary dl { 
+	font-size: 0.9em;
+	overflow: hidden;
+}
+
+article > section.summary dt { 
+	float: left;
+	padding: 4px; 
+	width: 120px;
+	text-align: right;
 	background: #eee;
+	font-weight: bold;
+	font-size: 0.9em;
+	clear: both;
+	margin-bottom: 2px !important;
 }
 
-#smart-archives-block span, #smart-archives-block a {
+article > section.summary dd { 
+	margin: 0;
 	padding: 4px;
+	float: left;
+	width: $content-width - 140px;
+	font-size: 0.9em;
+	margin-bottom: 2px !important;
 }
 
-#smart-archives-list h2 { 
-	margin-top: 24px;
+
+/* ----------------------------------------------------------------------
+ * -- Download links
+ * ---------------------------------------------------------------------- */
+
+article > section.downloads { 
+	text-align: center;
+	margin: 8px 0;
+}
+
+
+/* ----------------------------------------------------------------------
+ * -- Responsive design
+ * ---------------------------------------------------------------------- */
+
+@media screen and (max-width: 800px) {
+	#left-sidebar { overflow: hidden; width: $content-width; padding-left: 20px; font-size: 0.9em;  }
+	#left-sidebar h2 { width: $content-width; }
+	#left-sidebar li { font-size: 0.9em; padding: 4px; float: left; width: 30%; vertical-align: top; }
+	#left-sidebar section { width: $content-width; overflow: hidden;} 
+	p.to_content { display: block; text-align: right; width: $content-width; padding-left: 20px; font-size: 0.9em; }
 }
