@@ -15,7 +15,10 @@ category: tools
 		
 		<dt>Source</dt>
 		<dd><a href="http://github.com/sodaware/redditsigs.com/">http://github.com/sodaware/redditsigs.com/</a></dd>
-				
+		
+		<dt>Homepage</dt>
+		<dd><a href="http://redditsigs.com/">redditsigs.com</a></dd>
+		
 	</dl>
 	
 </section>
@@ -69,4 +72,15 @@ category: tools
 <p>
 	In future I may update the calculation to give different weights to different
 	trophies.
-</p> 
+</p>
+
+<h4>Setup</h4>
+
+<p>redditsigs is a <a href="http://sodaware.github.com/hagfish.html">hagfish</a> based application. It also requires <a href="simplehtmldom">http://simplehtmldom.sourceforge.net/</a> (just drop simple_html_dom.php in the vendor directory).</p>
+
+<p>To get image generation working properly, you'll need to download the trophy images from reddit and save them in the assets folder. <code>assets/trophies</code> contains a list of trophies taken from <a href="http://reddit.com/help/awards">http://reddit.com/help/awards</a>.</p>
+
+<p>To automatically download images, run the following from inside your redditsigs.com directory.</p>
+
+<pre>cd assets
+wget -i https://raw.github.com/Sodaware/redditsigs.com/master/assets/trophies</pre>
