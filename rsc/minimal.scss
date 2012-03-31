@@ -174,55 +174,42 @@ img.shadow {
  * -- Sidebar Styles
  * ---------------------------------------------------------------------- */
 
-#left-sidebar h2 {
+#left-sidebar {
+
+	section { 
+		background: #eee;
+		padding: 10px;
+		margin-bottom: 20px;
+		overflow: hidden;
+	}
 	
-	@include underline;
-	@include heading;
-	
-	font-size: 1.2em;
-	width: 200px;
+	h2 {
+		
+		@include underline;
+		@include heading;
+		
+		font-size: 1.2em;
+		width: 200px;
+
+	}
+
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		
+		li {
+			margin: 4px 0;
+			padding: 4px;
+		
+			&.selected { 
+				background: #ddd;
+			}
+		}
+
+	}
 
 }
-
-#left-sidebar ul {
-	margin: 0;
-	padding: 0;
-	list-style: none;
-}
-
-#left-sidebar ul li {
-	margin: 4px 0;
-	padding: 4px;
-}
-
-#left-sidebar ul li.selected { 
-	background: #ddd;
-}
-
-#left-sidebar section { 
-	background: #eee;
-	padding: 10px;
-	margin-bottom: 20px;
-	overflow: hidden;
-}
-
-
-/* Currently selected menu item */
-.page-hagfish li.hagfish,  			
-.page-phing_extra li.phing_extra, 
-.page-sodaware_mod li.sodaware_mod, 
-.page-pangolin li.pangolin, 
-.page-blam li.blam, 
-.page-pangolin li.reddit_sigs, 
-.page-blitzunit li.blitzunit, 
-.page-php_todolist li.php_todolist, 
-.page-blitz_libs li.blitz_libs,
-.page-monster_mash li.monster_mash,
-.page-psycho_bean li.psycho_bean
-{
-	background: #ddd;
-}
-
 
 
 /* ----------------------------------------------------------------------
