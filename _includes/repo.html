@@ -1,0 +1,33 @@
+<article id="content-container">
+
+	<h2><a href="http://sodaware.github.com">sodaware.github.com</a> / {{ page.title }}</h2>
+
+	<section class="summary">
+		
+		<dl>
+			<dt>Licence</dt>
+			<dd><a href="{{ page.license.url }}">{{ page.license.name }}</a></dd>
+		
+			<dt>Source</dt>
+			<dd><a href="http://github.com/sodaware/{{ page.repo }}/">http://github.com/sodaware/{{ page.repo }}/</a></dd>
+
+			{% if page.homepage %}
+				<dt>Homepage</dt>
+				<dd><a href="{{ page.homepage.url }}">{{ page.homepage.name }}</a></dd>
+			{% endif %}
+
+		</dl>
+		
+	</section>
+
+	<section class="downloads">
+		<a href="http://github.com/sodaware/{{ page.repo }}/zipball/master" class="download button"><span>Download zip</span></a>
+		&nbsp;
+		<a href="http://github.com/sodaware/{{ page.repo }}/tarball/master" class="download button"><span>Download tar.gz</span></a>
+	</section>
+	
+	{{ content }}
+
+	<p class="to_top"><a href="#top">&uarr; Back to Top</a></p>
+	
+</article><!-- /article#content-container -->

@@ -1,1 +1,3 @@
-permalink: /:title.html
+permalink: /:categories/:title/
+
+exclude: build.xml

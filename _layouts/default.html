@@ -1,44 +1,5 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-	<title>sodaware.github.com</title>
-	<link rel="stylesheet" href="rsc/minimal.css" />
-</head>
-
-<body id="top">
-
-<p class="to_content"><a href="#content-container">&darr; Skip to Content</a></p>
-	
-<nav id="left-sidebar">
-	
-	<section>
-		<h2>Tools &amp; Libraries</h2>
-		<ul>
-			{% for post in site.categories.tools %}
-	    		<li class="{{ post.page_id }}"><a href="{{ post.url }}">{{ post.title }}</a></li>
-	    	{% endfor %}
-	    </ul>
-	</section>
-	
-	<section>
-		<h2>Game Jam Entries</h2>
-		<ul>
-			{% for post in site.categories.game_jams %}
-	    		<li class="{{ post.page_id }}"><a href="{{ post.url }}">{{ post.title }}</a></li>
-	    	{% endfor %}
-	    </ul>
-	</section>
-		
-	<section>
-		<h2>More Stuff</h2>
-		<ul>
-			<li><a href="http://www.sodaware.net/blog/">Blog</a></li>
-			<li><a href="http://www.sodaware.net/dev/">Developer Resources</a></li>
-		</ul>
-	</section>
-
-</nav><!-- /nav#left-sidebar -->
+{% include header.html %}
+{% include sidebar.html %}
 
 <article id="content-container">
 
@@ -50,5 +11,4 @@
 	
 </article><!-- /article#content-container -->
 
-</body>
-</html>
+{% include footer.html %}
