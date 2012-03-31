@@ -1,6 +1,9 @@
 <article id="content-container">
 
 	<h2><a href="http://sodaware.github.com">sodaware.github.com</a> / {{ page.title }}</h2>
+	{% if page.subtitle %}
+		<h3>{{ page.subtitle }}</h3>
+	{% endif %}
 
 	<section class="summary">
 		
