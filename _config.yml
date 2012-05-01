@@ -1,5 +1,5 @@
 permalink: /:categories/:title/
-markdown: RDiscount
+markdown: rdiscount
 
 
 exclude: build.xml
