@@ -8,16 +8,30 @@
 	<section class="summary">
 		
 		<dl>
-			<dt>Licence</dt>
-			<dd><a href="{{ page.license.url }}">{{ page.license.name }}</a></dd>
-		
-			<dt>Source</dt>
-			<dd><a href="http://github.com/sodaware/{{ page.repo }}/">http://github.com/sodaware/{{ page.repo }}/</a></dd>
 
 			{% if page.homepage %}
 				<dt>Homepage</dt>
 				<dd><a href="{{ page.homepage.url }}">{{ page.homepage.name }}</a></dd>
 			{% endif %}
+			
+			{% if page.version %}
+				<dt>Version</dt>
+				<dd>{{ page.version }}</dd>
+			{% endif %}
+
+			{% if page.release %}
+				<dt>Release Date</dt>
+				<dd>{{ page.release }}</dd>
+			{% endif %}
+
+			{% if page.license %}
+				<dt>Licence</dt>
+				<dd><a href="{{ page.license.url }}">{{	page.license.name }}</a></dd>
+			{% endif %}
+			
+			<dt>Source</dt>
+			<dd><a href="http://github.com/sodaware/{{ page.repo }}/">http://github.com/sodaware/{{ page.repo }}/</a></dd>
+
 
 		</dl>
 		
