@@ -1,71 +1,58 @@
----
-layout: default
----
+<!doctype html>
+<html>
 
-<p>
-  A bunch of my open source projects.
-</p>
+<head>
+  <title>Redirecting to sodaware.sdf.org</title>
 
-<section id="tools-and-libraries">
-  
-  <h3>Tools &amp; Libraries</h3>
-  
-  <dl>
-	 <dt><a href="/tools/hagfish/">Hagfish</a></dt>
-	 <dd>
-		An ugly web application framework for PHP. Lightweight, fast and 
-		designed for simple sites that don't require the clout of something
-		larger like Symfony or Zend.
-	 </dd>
-	 
-	 <dt><a href="/code/vault/">vault</a></dt>
-	 <dd>
-      A simple cache library for PHP. Store and retrieve data from a central
-      cache location. Supports file and APC based caches.
-	 </dd>
-    
-	 <dt><a href="/code/apollo/">apollo</a></dt>
-	 <dd>
-		Entity/Component framework for ActionScript, based on the Artemis
-		framework for Java.
-	 </dd>
-    
-	 <dt><a href="/tools/php-todolist/">php-todolist</a></dt>
-	 <dd>
-		A simple PHP script that scans source code for <code>TODO:</code>
-		comments and displays them in a nicely formatted list.
-	 </dd>
-    
-  </dl>
-  
-</section>
+  <style>
+   body {
+       color: #232323;
+       font-family: 'Inconsolata', monospace;
+   }
 
-<section id="misc">
-  
-  <h3>Miscellaneous Stuff</h3>
-  
-  <dl>
-	 <dt><a href="/misc/minimal/">minimal</a></dt>
-	 <dd>
-		A minimalist WordPress theme, used on my personal blog 
-		<a href="http://www.philnewton.net/">philnewton.net</a>.
-	 </dd>
-    
-    
-	 <dt><a href="/misc/redditsigs/">RedditSigs.com</a></dt>
-	 <dd>
-		A joke project inspired by a comment on Reddit. Creates a graphical
-		and ascii signature for a reddit account. Built with Hagfish.
-	 </dd>
-    
-  </dl>
-  
-</section>
+   a {
+       color: #0047b5;
+   }
 
-<aside>
-  <p>
-	 The raw source for these pages can be found in the 
-	 <a href="https://github.com/sodaware/sodaware.github.com/">sodaware.github.com</a>
-	 repository.
-  </p>
-</aside>
+   a:hover {
+       color: #00b56c;
+   }
+
+   .timer {
+       font-size: 2em;
+       font-weight: bold;
+       color: #00b56c;
+   }
+  </style>
+
+  <script type="text/javascript">
+   var seconds_remaining = 5;
+
+   function countdown() {
+       if ( seconds_remaining <= 0) {
+           window.location = "http://sodaware.sdf.org/";
+       } else {
+           document.getElementById('remaining').innerHTML = seconds_remaining;
+           seconds_remaining -= 1;
+           window.setTimeout("countdown()", 1000);
+       }
+   }
+  </script>
+</head>
+
+<body onload="countdown();">
+  <table width="100%" height="600px" style="text-align:center;">
+    <tr>
+      <td valign="center">
+        <h3>
+          Redirecting to <a href="http://sodaware.sdf.org/">sodaware.sdf.org</a>
+        </h3>
+
+        <span class="timer">
+          <span id="remaining">5</span>
+        </span>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
